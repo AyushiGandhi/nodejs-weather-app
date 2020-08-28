@@ -6,7 +6,7 @@ let weather = (address, callback) => {
     if (reject) {
       callback({error: 'Unable to connect to the Server'})
     } else if (!response.body.request) {
-      callback({error: 'Please Check The Name of The Address : Invalid Data '})
+      callback({error: 'Invalid Data <br>Please Check The Name of The Address  '})
     } else {
       callback(undefined, {
         country: response.body.request.query,

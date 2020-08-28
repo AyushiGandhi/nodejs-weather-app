@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const weather = require('./utils/weather');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const path = require('path');
 const directoryPath = path.join('__dirname', '../public');
@@ -20,6 +20,7 @@ app.get('', (req, res) => {
     title: 'Weather',
   })
 });
+
 
 app.get('/weather', (req, res) => {
   weather(req.query.address, (reject, data = {}) => {
@@ -56,6 +57,6 @@ app.get('*', (req, res) => {
   res.render('error404', {message: '404 Invalid Address'})
 });
 app.listen(port, () => {
-  console.log('Server is Working')
+  console.log('Server is Working'+port)
 });
 

@@ -1,17 +1,40 @@
-h1 {
+.outerDiv
+{
+    background-color: #006699;
+    color: #fff;
+    height: 410px;
+    width: 1200px;
+    margin: 0px auto;
+    padding: 20px;
+}
+.leftDiv
+{
+    background-color: #efefef;
+    color: #000;
+    height: 400px;
+    padding-left: 30px;
+    width: 48%;
+    float: left;
+}
+.rightDiv
+{
+    background-color: #efefef;
+    color: #000;
+    height: 380px;
+    width: 48%;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
+    float: right;
+}
+
+
+
+h1,h4,h3 {
     color: darkred;
     font-weight: bold;
-    padding-left: 20px;
-
 }
 
-div {
-    width: 300px;
-    padding: 10px 30px 35px 20px;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-weight: bold;
-
-}
 
 input {
     border: 3px solid red;

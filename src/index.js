@@ -22,26 +22,26 @@ app.get('', (req, res) => {
 });
 
 app.get('/weather', (req, res) => {
-  //if(!req.query.address){return res.render('error404',{message: '404 Enter Address in url '})}
-  weather(req.query.address  ,(reject,data ={})=>{
-    if (reject){return res.send(reject)}
-    else {res.send(data)}
-    })
+  weather(req.query.address, (reject, data = {}) => {
+    if (reject) {
+      return res.send(reject)
+    } else {
+      res.send(data)
+    }
+  })
 });
-
-
-
-
-
 
 app.get('/about', (req, res) => {
   res.render('about', {
-    title: 'About' })
+    title: 'About'
+  })
 });
 app.get('/help', (req, res) => {
   res.render('help', {
-    title: 'Help' })
+    title: 'Help'
+  })
 });
+
 // ERROR404
 app.get('/help/*', (req, res) => {
   res.render('error404', {message: '404 /HELP/*'})
@@ -55,8 +55,6 @@ app.get('/weather/*', (req, res) => {
 app.get('*', (req, res) => {
   res.render('error404', {message: '404 Invalid Address'})
 });
-
-
 app.listen(port, () => {
   console.log('Server is Working')
 });

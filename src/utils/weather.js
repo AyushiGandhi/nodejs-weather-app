@@ -13,6 +13,9 @@ let weather = (address, callback) => {
         temperature: response.body.current.temperature,
         latitude: response.body.location.lat,
         longitude: response.body.location.lon,
+        icon : response.body.current.weather_icons[0],
+        weather_descriptions : response.body.current.weather_descriptions[0],
+        humidity : response.body.current.humidity
       })
     }
   })

@@ -12,15 +12,17 @@ weatherForm.addEventListener('submit', () => {
   fetch('/weather?address=' + search).then((response) => {
     location_cityName.value = '';
     loading.innerHTML='' ;
-    message2.innerHTML = 'Displaying Weather Details';
+    message2.innerHTML =  'Displaying Weather Details';
     response.json().then((data) => {
       if (data.error) {
         return message1.innerHTML = data.error
       }
-      message1.innerHTML = 'Your City is ' + data.country + '<br> Temperature is ' + data.temperature +
-        '<br> Latitude :' + data.latitude + '<br> Longitude :' + data.longitude;
+      message2.innerHTML =    ` <img src="${data.icon}" width="30px" height="30px" >` + 'Displaying Weather Details'+   ` <img src="${data.icon}" width="30px" height="30px" >`;
+      message1.innerHTML =  'City : ' + data.country + '<br>' + 'Temperature : ' + data.temperature  + '<br>' + 'Humidity : ' + data.humidity +
+      '<br> Latitude :' + data.latitude + '<br> Longitude :' + data.longitude + '<br>' +
+        'Weather : ' + data.weather_descriptions;
 
-    }).catch(e => message1.innerHTML = e)
+    })
   })
 });
 
